@@ -8,7 +8,7 @@ function y = esp32_link(u)
 %   esp32_link('count')  number of packets received so far
 %   esp32_link('close')  stops the motors and closes the link
 %
-% WiFi (default): the ESP32 makes its own WiFi network "Robot_ESP32" (password 12345678).
+% WiFi (default): the ESP32 makes its own WiFi network "Robot_ESP32" (use your device-specific passphrase).
 %   Connect the laptop to it, the robot is at 192.168.4.1, UDP port 4210.
 %   Uses udpport (base MATLAB R2020b+, no toolbox).
 % Bluetooth (optional): set ESP32_LINK = "bt" and ESP32_PORT = "COMx" in the workspace

@@ -4,7 +4,7 @@
    Do not edit the numbers here - change robot_params.m and generate again.
    ---------------------------------------------------------------------
    2WD differential drive robot | L298N | JGB37-520 motors with encoders
-   Link: WiFi access point "Robot_ESP32" (password 12345678), robot IP 192.168.4.1, UDP port 4210
+   Link: WiFi access point "Robot_ESP32", robot IP 192.168.4.1, UDP port 4210
 
    FROM Simulink / MATLAB (one message every 20 ms):
        S,wL_ref,wR_ref,mode,V_test,Kp,Ki
@@ -31,7 +31,9 @@
 #include <WiFi.h>
 #include <WiFiUdp.h>
 const char *WIFI_SSID = "Robot_ESP32";      // the ESP32 makes this WiFi network
-const char *WIFI_PASS = "12345678";      // (at least 8 characters)
+#include "robot_wifi_local.h"
+static constexpr char WIFI_PASS[] = ROBOT_AP_PASSPHRASE;
+static_assert(sizeof(WIFI_PASS) >= 9 && sizeof(WIFI_PASS) <= 64, "Use an 8 to 63 byte Wi-Fi passphrase");
 const uint16_t UDP_PORT = 4210;           // robot IP is always 192.168.4.1
 WiFiUDP udp;
 IPAddress pcIP;

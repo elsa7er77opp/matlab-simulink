@@ -27,7 +27,7 @@ Milestone2_FINAL/
 ## الروبوت الحقيقي على WiFi
 1. وصّل حسب `Circuit_Diagram.png`. اظبط الـ LM2596 على 5.0 V الأول.
 2. `generate_esp32_code` ← افتح `ESP32_Robot\ESP32_Robot.ino` في Arduino IDE ← Board: **ESP32 Dev Module** ← Upload.
-3. الـ ESP32 بيعمل شبكة WiFi اسمها **Robot_ESP32** (الباسورد **12345678**). وصّل اللابتوب عليها.
+3. الـ ESP32 بيعمل شبكة WiFi اسمها **Robot_ESP32** (استخدم كلمة المرور الخاصة بالجهاز). وصّل اللابتوب عليها.
    أول مرة: لو Windows سأل عن الـ firewall للماتلاب ← Allow (Private + Public).
 4. `test_robot_connection` (والعجل مرفوع) وصلّح اللي يقولك عليه.
    لو قالك غيّر `DIR_L` أو `ENC_SIGN_R`... غيّرها في `generate_esp32_code.m` واعمل generate و upload تاني.

@@ -2,7 +2,7 @@
 % Checks: WiFi link, data rate, wheel direction, encoder sign, encoder counts
 % per turn (gear ratio) and the PI speed loop.
 % >>> LIFT THE ROBOT (wheels in the air) before running. <<<
-%   laptop WiFi -> "Robot_ESP32" (password 12345678), then  >> test_robot_connection
+%   laptop WiFi -> "Robot_ESP32" (use your device-specific passphrase), then  >> test_robot_connection
 clc; close all;
 P = robot_params(false);  S = robot_ss(P);
 dt = P.Ts_link;

@@ -31,7 +31,9 @@
 #include <WiFi.h>
 #include <WiFiUdp.h>
 const char *WIFI_SSID = "{{SSID}}";      // the ESP32 makes this WiFi network
-const char *WIFI_PASS = "{{PASS}}";      // (at least 8 characters)
+#include "robot_wifi_local.h"
+static constexpr char WIFI_PASS[] = ROBOT_AP_PASSPHRASE;
+static_assert(sizeof(WIFI_PASS) >= 9 && sizeof(WIFI_PASS) <= 64, "Use an 8 to 63 byte Wi-Fi passphrase");
 const uint16_t UDP_PORT = 4210;           // robot IP is always 192.168.4.1
 WiFiUDP udp;
 IPAddress pcIP;

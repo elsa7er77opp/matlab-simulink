@@ -7,7 +7,7 @@ function build_robot_wireless()
 %       REFERENCE  |  REAL ROBOT  |  MODEL        live, in real time.
 %
 %  Before Run :  1) generate_esp32_code  and upload ESP32_Robot.ino
-%                2) connect the laptop WiFi to "Robot_ESP32" (password 12345678)
+%                2) connect the laptop WiFi to "Robot_ESP32" (use your device-specific passphrase)
 %  While running: move the sliders (speed / turning) -> the robot moves immediately.
 %                 or double click v_ref / psi_dot_ref / mode and type a value.
 %
@@ -154,7 +154,7 @@ end
 annotate(mdl, sprintf(['DRIVE THE ROBOT: Run, then move the SPEED slider / TURN knob.\n' ...
     'mode: 1 = PI   2 = RST   0 = open loop (V_test).   Stop = motors stop.']), [40 540]);
 save_system(mdl);
-fprintf(['\n%s.slx created.\n  1) laptop WiFi -> "Robot_ESP32" (password 12345678)\n' ...
+fprintf(['\n%s.slx created.\n  1) laptop WiFi -> "Robot_ESP32" (use your device-specific passphrase)\n' ...
          '  2) (Windows firewall: allow MATLAB on private + public networks)\n' ...
          '  3) (first time) run test_robot_connection\n' ...
          '  4) Run, then move the SPEED slider\n'], mdl);
