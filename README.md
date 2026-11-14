@@ -8,7 +8,7 @@ The repository implements state-space analysis, closed-loop PI simulation, digit
 
 ## Getting started
 
-From MATLAB, change directory to `MATLAB` and run the example below. Simulink and Simscape Multibody are required for their respective builders. `generate_esp32_code` generates the wireless firmware. Set a device-specific access-point passphrase before flashing.
+From MATLAB, change directory to `MATLAB` and run the example below. Simulink and Simscape Multibody are required for their respective builders. `generate_esp32_code` generates the wireless firmware. For a Wi-Fi build, create the ignored file `ESP32_Robot/robot_wifi_local.h` and define `ROBOT_AP_PASSPHRASE` as a quoted C string containing a unique, randomly generated passphrase (8–63 printable ASCII bytes). The generator leaves this private file intact. Bluetooth builds do not require the header. Reflash devices that used the earlier shared value before wireless operation.
 
 ```matlab
 P = robot_params(false);
